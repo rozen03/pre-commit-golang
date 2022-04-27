@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-FILES=$(go list ./...  | grep -v /vendor/)
+FILES=$(go list ./api/...  | grep -v /vendor/)
 
 go test -tags=unit -timeout 30s -short -v ${FILES}
 
