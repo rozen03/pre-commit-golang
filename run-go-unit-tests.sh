@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-FILES=$(go list ./api/...  | grep -v /vendor/)
+FILES=$(go list   | grep -v /vendor/)
 
-go test -tags=unit -timeout 30s -short -v ${FILES}
+go test ./api/...
 
 returncode=$?
 if [ $returncode -ne 0 ]; then
